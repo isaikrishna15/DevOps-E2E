@@ -2,11 +2,11 @@ replicaCount: 1
 
 frontend:
   repository: skpdoc15/frontend
-  tag: latest
+  tag: 2cf339015c8cb672556de7bc53f009d01c6ef48b
 
 backend:
   repository: skpdoc15/backend
-  tag: latest
+  tag: 2cf339015c8cb672556de7bc53f009d01c6ef48b
 
 
 postgres:
