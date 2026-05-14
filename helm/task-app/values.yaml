@@ -1,10 +1,13 @@
 replicaCount: 1
 
 frontend:
-  image: skpdoc15/frontend:5af6b0dfd2574da46d61bb33185b6a894e65b153
+  repository: skpdoc15/frontend
+  tag: latest
 
 backend:
-  image: skpdoc15/backend:5af6b0dfd2574da46d61bb33185b6a894e65b153
+  repository: skpdoc15/backend
+  tag: latest
+
 
 postgres:
   user: admin
