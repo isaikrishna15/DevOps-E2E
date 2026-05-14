@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: {{ .Values.backend.image }}
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB_USER
+          value: admin
+        - name: DB_PASSWORD
+          value: password
+        - name: DB_NAME
+          value: tasksdb
+        - name: DB_HOST
+          value: postgres
+        - name: REDIS_HOST
+          value: redis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+  - port: 5000
+    targetPort: 5000

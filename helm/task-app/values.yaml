@@ -1,0 +1,13 @@
+frontend:
+  image: YOUR_DOCKERHUB_USERNAME/task-frontend:v1
+
+backend:
+  image: YOUR_DOCKERHUB_USERNAME/task-backend:v1
+
+postgres:
+  user: admin
+  password: password
+  database: tasksdb
+
+redis:
+  image: redis:7
