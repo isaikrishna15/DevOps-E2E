@@ -1,8 +1,10 @@
+replicaCount: 1
+
 frontend:
-  image: YOUR_DOCKERHUB_USERNAME/task-frontend:v1
+  image: skpdoc15/frontend:5af6b0dfd2574da46d61bb33185b6a894e65b153
 
 backend:
-  image: YOUR_DOCKERHUB_USERNAME/task-backend:v1
+  image: skpdoc15/backend:5af6b0dfd2574da46d61bb33185b6a894e65b153
 
 postgres:
   user: admin
@@ -11,3 +13,29 @@ postgres:
 
 redis:
   image: redis:7
+
+service:
+  type: NodePort
+  port: 80
+  nodeport: 30080
+
+serviceAccount:
+  create: true
+  name: ""
+
+ingress:
+  enabled: false
+
+httpRoute:
+  enabled: false
+
+autoscaling:
+  enabled: false
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
