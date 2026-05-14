@@ -1,9 +1,12 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
 
 jobs:
   build-and-push:
@@ -55,5 +58,6 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
         git add helm/task-app/values.yaml
-        git commit -m "Updated image tags"
+        git commit -m "Updated image tags" || echo "No changes"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         git push
