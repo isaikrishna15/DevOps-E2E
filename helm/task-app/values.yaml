@@ -7,7 +7,7 @@ frontend:
 backend:
   replicaCount: 1
   repository: skpdoc15/backend
-  tag: f4add1bd3151d21f3b0d30f405364ae07ddad00f
+  tag: latest
 
 
 postgres:
