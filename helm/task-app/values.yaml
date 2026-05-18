@@ -1,20 +1,23 @@
-replicaCount: 1
 
 frontend:
+  replicaCount: 2
   repository: skpdoc15/frontend
   tag: 0ee9836768ca54a2bdc7def9d0375089a355aa48
 
 backend:
+  replicaCount: 1
   repository: skpdoc15/backend
   tag: 0ee9836768ca54a2bdc7def9d0375089a355aa48
 
 
 postgres:
+  replicaCount: 1
   user: admin
   password: password
   database: tasksdb
 
 redis:
+  replicaCount: 1
   image: redis:7
 
 service:
