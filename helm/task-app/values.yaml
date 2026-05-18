@@ -2,12 +2,12 @@
 frontend:
   replicaCount: 2
   repository: skpdoc15/frontend
-  tag: e819bd324a3b73ced584d1f875e525aab23d516d
+  tag: f4add1bd3151d21f3b0d30f405364ae07ddad00f
 
 backend:
   replicaCount: 1
   repository: skpdoc15/backend
-  tag: e819bd324a3b73ced584d1f875e525aab23d516d
+  tag: f4add1bd3151d21f3b0d30f405364ae07ddad00f
 
 
 postgres:
