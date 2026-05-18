@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'frontend/**'
+      - 'backend/**'
+      - 'helm/**'
+      - '.github/workflows/**'
 
 permissions:
   contents: write
@@ -58,6 +63,6 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
         git add helm/task-app/values.yaml
-        git commit -m "Updated image tags" || echo "No changes"
+        git commit -m "Updated image tags [skip ci]" || echo "No changes"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         git push
