@@ -23,7 +23,7 @@ redis:
 service:
   type: NodePort
   port: 80
-  nodeport: 30080
+  
 
 serviceAccount:
   create: true
